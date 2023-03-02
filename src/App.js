@@ -110,7 +110,6 @@ function addTopic(id){
     }
     return group
     })
-    console.log("newtopic",newTopic)
 
     setState({
       group:newTopic,
@@ -119,7 +118,7 @@ function addTopic(id){
     });
   }
 
-function ChangeTopic(id,newValue){
+function ChangeTopic(id){
 
   const knowledgeSet = structuredClone(state.group).map(group=>{
     return{

@@ -50,6 +50,15 @@ export default function GroupListItem(props ) {
           setValue={props.setValue}/>
     ))
 
+  function calcAverKnowledge(){
+    const knowledge = props.topicList.map(item=> item.knowledge );
+    const knowledgeBlock=[];
+    knowledgeBlock.push(knowledge);
+    const addedKnowledgeBlock = Math.round((knowledgeBlock[0].reduce((a,b)=> a+b))/knowledgeBlock[0].length);
+    
+    return addedKnowledgeBlock
+  }
+
    
   return (
     <li key={props.item.groupId}>{props.item.groupSetting ?
@@ -82,6 +91,7 @@ export default function GroupListItem(props ) {
         <div>
           {props.item.title}
         </div>
+        <div>{calcAverKnowledge()} %</div>
         <div>
         {settingDayleft()}
         </div>

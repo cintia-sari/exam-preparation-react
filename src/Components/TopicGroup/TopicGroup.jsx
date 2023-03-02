@@ -7,7 +7,8 @@ export default function TopicGroup(props) {
     }
 
     function handleSetValue(e){
-        props.setValue(props.topic.topicId, e.target.value)
+        const valueInt=parseInt(e.target.value)
+        props.setValue(props.topic.topicId,valueInt)
     }
    
 
