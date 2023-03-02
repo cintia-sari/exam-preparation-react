@@ -14,7 +14,8 @@ export default function GroupList(props) {
                        topicList={item.topicList}
                        ChangeTopic={props.ChangeTopic}
                        setValue={props.setValue}
-                       chageHasTopic={props.chageHasTopic}/>
+                       chageHasTopic={props.chageHasTopic}
+                       deleteTopic={props.deleteTopic}/>
     ))
 
   return (

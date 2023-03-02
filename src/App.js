@@ -188,6 +188,24 @@ function chageHasTopic(id){
   });
 }
 
+function deleteTopic(id){
+  const newTopicGroup = structuredClone(state.group).map(group=>{
+    return{
+      title: group.title,
+      examDate: group.examDate,
+      groupSetting: group.groupSetting,
+      groupId: group.groupId, 
+      topicList:group.topicList.filter(item=> item.topicId !== id)
+    }
+  })
+
+  setState({
+    group:newTopicGroup,
+    nextGroupId:state.nextGroupId,
+    nextTopicId:state.nextTopicId
+  });
+}
+
   return (
     <>
      <h1>Exam Preparation</h1>
@@ -200,7 +218,8 @@ function chageHasTopic(id){
                 addTopic={addTopic}
                 ChangeTopic={ChangeTopic}
                 setValue={setValue}
-                chageHasTopic={chageHasTopic}/>
+                chageHasTopic={chageHasTopic}
+                deleteTopic={deleteTopic}/>
     </>
   );
 }

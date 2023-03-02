@@ -15,6 +15,10 @@ export default function TopicGroup(props) {
         props.chageHasTopic(props.topic.topicId)
     }
 
+    function handleDeleteTopic(){
+        props.deleteTopic(props.topic.topicId)
+    }
+
   return (
     <div> {props.topic.topicSetting ?
        <button onClick={handleChangeTopic}> OK</button>

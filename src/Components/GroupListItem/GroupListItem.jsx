@@ -48,7 +48,8 @@ export default function GroupListItem(props ) {
           topic={topic}
           ChangeTopic={props.ChangeTopic}
           setValue={props.setValue}
-          chageHasTopic={props.chageHasTopic}/>
+          chageHasTopic={props.chageHasTopic}
+          deleteTopic={props.deleteTopic}/>
     ))
 
   function calcAverKnowledge(){
