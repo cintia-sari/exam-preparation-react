@@ -13,11 +13,11 @@ function App() {
         groupSetting: false,
         groupId: 0, 
         topicList:[{
-          name:"Topic",
-          topicRename:false,
+          name: "Topic",
           knowledge: 0,
-          topic: false,
-          topicId:0,
+          topicSetting: false,
+          hasTopic: false,
+          topicId: 0,
             }  
         ], 
       }],
@@ -101,20 +101,20 @@ function addTopic(id){
   const newTopic= structuredClone(state.group).map(group=>{
     if(group.groupId == id){
       group.topicList = [...group.topicList,{
-        name:"Topic name",
-        topicRename:false,
+        name: "Topic",
         knowledge: 0,
-        topic: false,
-        topicId:state.nextTopicId,
+        topicSetting: false,
+        hasTopic: false,
+        topicId: state.nextTopicId,
       }]
     }
     return group
     })
 
     setState({
-      group:newTopic,
-      nextGroupId:state.nextGroupId,
-      nextTopicId:state.nextTopicId +1
+      group: newTopic,
+      nextGroupId: state.nextGroupId,
+      nextTopicId: state.nextTopicId +1
     });
   }
 
@@ -128,7 +128,7 @@ function ChangeTopic(id){
         groupId: group.groupId, 
         topicList:group.topicList.map(topic=>{
           if(topic.topicId == id){
-            topic.topic = !topic.topic
+            topic.topicSetting = !topic.topicSetting
           }
           return topic;
         })
@@ -165,6 +165,28 @@ function setValue(id, newValue){
   });
 }
 
+function chageHasTopic(id){
+  const changedHasTopic = structuredClone(state.group).map(group=>{
+    return{
+      title: group.title,
+      examDate: group.examDate,
+      groupSetting: group.groupSetting,
+      groupId: group.groupId, 
+      topicList:group.topicList.map(item=>{
+        if(item.topicId == id ){
+          item.hasTopic = !item.hasTopic
+        }
+        return item;
+      })
+
+    }
+  })
+  setState({
+    group:changedHasTopic,
+    nextGroupId:state.nextGroupId,
+    nextTopicId:state.nextTopicId
+  });
+}
 
   return (
     <>
@@ -177,7 +199,8 @@ function setValue(id, newValue){
                 changeExamDate={changeExamDate}
                 addTopic={addTopic}
                 ChangeTopic={ChangeTopic}
-                setValue={setValue}/>
+                setValue={setValue}
+                chageHasTopic={chageHasTopic}/>
     </>
   );
 }
