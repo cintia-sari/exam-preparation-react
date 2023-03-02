@@ -206,6 +206,27 @@ function deleteTopic(id){
   });
 }
 
+function changeTopicName(id,newName){
+  const newTopicName= structuredClone(state.group).map(group=>{
+    return{
+      title: group.title,
+      examDate: group.examDate,
+      groupSetting: group.groupSetting,
+      groupId: group.groupId, 
+      topicList:group.topicList.map(item=>{
+        if(item.topicId === id){
+            item.name = newName
+        }
+        return item;
+      })
+    }})
+  setState({
+    group:newTopicName,
+    nextGroupId:state.nextGroupId,
+    nextTopicId:state.nextTopicId
+  });
+}
+
   return (
     <>
      <h1>Exam Preparation</h1>
@@ -219,7 +240,8 @@ function deleteTopic(id){
                 ChangeTopic={ChangeTopic}
                 setValue={setValue}
                 chageHasTopic={chageHasTopic}
-                deleteTopic={deleteTopic}/>
+                deleteTopic={deleteTopic}
+                changeTopicName={changeTopicName}/>
     </>
   );
 }

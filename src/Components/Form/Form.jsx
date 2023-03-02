@@ -16,7 +16,9 @@ export default function Form(props) {
         e.preventDefault();
         props.addGroup(title, examDate);
         setTitle("");
-    };
+    }
+
+    
 
   return (
     <form key="form" action='.' method='GET' onSubmit={handleSubmit}>

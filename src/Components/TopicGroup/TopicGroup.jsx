@@ -19,9 +19,20 @@ export default function TopicGroup(props) {
         props.deleteTopic(props.topic.topicId)
     }
 
+    function handleChangeTopicName(e){
+        props.changeTopicName(props.topic.topicId, e.target.value)
+    }
+
   return (
     <div> {props.topic.topicSetting ?
-       <button onClick={handleChangeTopic}> OK</button>
+        <div>
+            <label> Topic name: </label>
+            <input 
+                type="text"
+                value={props.topic.name}
+                onChange={handleChangeTopicName}/>
+            <button onClick={handleChangeTopic}> OK</button>
+        </div>
         :
         <li>
             <div>
