@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import TopicGroup from "../TopicGroup/TopicGroup"
 
 
 export default function GroupListItem(props ) {
@@ -41,6 +42,11 @@ export default function GroupListItem(props ) {
     function handleAddTopic(e){
       props.addTopic(props.item.groupId)
     }
+  
+    const topicGroupjsx = props.topicList.map(topic=>(
+      <TopicGroup
+          topic={topic}/>
+    ))
 
    
   return (
@@ -78,7 +84,9 @@ export default function GroupListItem(props ) {
         {settingDayleft()}
         </div>
        <button onClick={handleAddTopic}>Add Item</button>
+       <ul>{topicGroupjsx}</ul>
       </div> 
+
     }
     </li>
   )

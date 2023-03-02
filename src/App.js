@@ -13,7 +13,7 @@ function App() {
         groupSetting: false,
         groupId: 0, 
         topicList:[{
-          name:"Topic name",
+          name:"Topic",
           topicRename:false,
           knowledge: 0,
           topic: false,
@@ -99,7 +99,7 @@ function changeExamDate(id,newDate ){
 
 function addTopic(id){
   const newTopic= structuredClone(state.group).map(group=>{
-    if(group.id == id){
+    if(group.groupId == id){
       group.topicList = [...group.topicList,{
         name:"Topic name",
         topicRename:false,
@@ -110,12 +110,14 @@ function addTopic(id){
     }
     return group
     })
+    console.log("newtopic",newTopic)
 
     setState({
       group:newTopic,
       nextGroupId:state.nextGroupId,
       nextTopicId:state.nextTopicId +1
     });
+    console.log(state.group)
   }
 
 
