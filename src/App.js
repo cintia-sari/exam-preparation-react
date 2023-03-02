@@ -117,9 +117,54 @@ function addTopic(id){
       nextGroupId:state.nextGroupId,
       nextTopicId:state.nextTopicId +1
     });
-    console.log(state.group)
   }
 
+function ChangeTopic(id,newValue){
+
+  const knowledgeSet = structuredClone(state.group).map(group=>{
+    return{
+        title: group.title,
+        examDate: group.examDate,
+        groupSetting: group.groupSetting,
+        groupId: group.groupId, 
+        topicList:group.topicList.map(topic=>{
+          if(topic.topicId == id){
+            topic.topic = !topic.topic
+          }
+          return topic;
+        })
+    }
+  });
+
+  setState({
+    group:knowledgeSet,
+    nextGroupId:state.nextGroupId,
+    nextTopicId:state.nextTopicId
+  });
+}
+
+function setValue(id, newValue){
+  const topicSet = structuredClone(state.group).map(group=>{
+    return{
+        title: group.title,
+        examDate: group.examDate,
+        groupSetting: group.groupSetting,
+        groupId: group.groupId, 
+        topicList:group.topicList.map(topic=>{
+          if(topic.topicId == id){
+            topic.knowledge = newValue
+          }
+          return topic;
+        })
+    }
+  });
+
+  setState({
+    group:topicSet,
+    nextGroupId:state.nextGroupId,
+    nextTopicId:state.nextTopicId
+  });
+}
 
 
   return (
@@ -131,7 +176,9 @@ function addTopic(id){
                 settingGroup={settingGroup}
                 changeTitle={changeTitle}
                 changeExamDate={changeExamDate}
-                addTopic={addTopic}/>
+                addTopic={addTopic}
+                ChangeTopic={ChangeTopic}
+                setValue={setValue}/>
     </>
   );
 }

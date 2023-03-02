@@ -45,7 +45,9 @@ export default function GroupListItem(props ) {
   
     const topicGroupjsx = props.topicList.map(topic=>(
       <TopicGroup
-          topic={topic}/>
+          topic={topic}
+          ChangeTopic={props.ChangeTopic}
+          setValue={props.setValue}/>
     ))
 
    

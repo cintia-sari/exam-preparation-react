@@ -2,15 +2,36 @@ import React from 'react'
 
 export default function TopicGroup(props) {
 
+    function handleChangeTopic(){
+        props.ChangeTopic(props.topic.topicId)
+    }
+
+    function handleSetValue(e){
+        props.setValue(props.topic.topicId, e.target.value)
+    }
+   
 
   return (
     <li>
         <div>{props.topic.name}</div>
-        <div>{props.topic.knowledge}</div>
-        <div>{props.topic.topic ? 
+        <div onClick={handleChangeTopic}>{props.topic.topic ? 
                 "van"
                 :
-                "nincs"}</div>  
+                "nincs"}
+        </div>  
+        <div>
+            <label>
+                <h4 className='level'>level: {props.topic.knowledge}%</h4>
+                <input
+                    className='istyle' 
+                    value={props.topic.knowledge}
+                    onChange={handleSetValue}
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="5" />
+            </label>
+        </div>
 
     </li>
   )

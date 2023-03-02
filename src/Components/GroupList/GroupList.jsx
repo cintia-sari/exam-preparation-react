@@ -11,7 +11,9 @@ export default function GroupList(props) {
                        changeTitle={props.changeTitle}
                        changeExamDate={props.changeExamDate}
                        addTopic={props.addTopic}
-                       topicList={item.topicList}/>
+                       topicList={item.topicList}
+                       ChangeTopic={props.ChangeTopic}
+                       setValue={props.setValue}/>
     ))
 
   return (
