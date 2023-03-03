@@ -1,6 +1,26 @@
+:root{
+  --green:#2CE77A;
+  --pink:#ff4699;
+  --darkblue:#2d3047;
+  --blue:#34395d;
+  --yellow:#fffd87;
+  --orange:#ff9b71;
+  --white :#fbf5f4;
+  --boxshadow:#171e49;
+}
+
 html {
   text-align: center;
-  background-color: black;
-  color:lightblue;
+  background-color: var(--darkblue);
+  color:var(--white);
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-width: 400px;
+  
+}
+
+.main-title{
+ color:var(--pink);
+ font-size: 3rem;
 }
 

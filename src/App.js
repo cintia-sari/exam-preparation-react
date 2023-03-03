@@ -55,7 +55,7 @@ function deleteGroup(id){
 
   function settingGroup(id){
       const setGroupSetting = structuredClone(state.group).map(group=>{
-        if( group.groupId == id){
+        if( group.groupId === id){
           group.groupSetting= !group.groupSetting;
         }
         return group;
@@ -99,7 +99,7 @@ function changeExamDate(id,newDate ){
 
 function addTopic(id){
   const newTopic= structuredClone(state.group).map(group=>{
-    if(group.groupId == id){
+    if(group.groupId === id){
       group.topicList = [...group.topicList,{
         name: "Topic",
         knowledge: 0,
@@ -127,7 +127,7 @@ function ChangeTopic(id){
         groupSetting: group.groupSetting,
         groupId: group.groupId, 
         topicList:group.topicList.map(topic=>{
-          if(topic.topicId == id){
+          if(topic.topicId === id){
             topic.topicSetting = !topic.topicSetting
           }
           return topic;
@@ -150,7 +150,7 @@ function setValue(id, newValue){
         groupSetting: group.groupSetting,
         groupId: group.groupId, 
         topicList:group.topicList.map(topic=>{
-          if(topic.topicId == id){
+          if(topic.topicId === id){
             topic.knowledge = newValue
           }
           return topic;
@@ -173,7 +173,7 @@ function chageHasTopic(id){
       groupSetting: group.groupSetting,
       groupId: group.groupId, 
       topicList:group.topicList.map(item=>{
-        if(item.topicId == id ){
+        if(item.topicId === id ){
           item.hasTopic = !item.hasTopic
         }
         return item;
@@ -229,7 +229,7 @@ function changeTopicName(id,newName){
 
   return (
     <>
-     <h1>Exam Preparation</h1>
+     <h1 className='main-title'>Exam Preparation</h1>
      <Form addGroup={addGroup}/>
      <GroupList group={state.group}
                 deleteGroup={deleteGroup}

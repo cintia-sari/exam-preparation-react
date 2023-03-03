@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import "./Form.css"
 
 export default function Form(props) {
     const [title,setTitle]= useState("");
@@ -21,10 +22,11 @@ export default function Form(props) {
     
 
   return (
-    <form key="form" action='.' method='GET' onSubmit={handleSubmit}>
+    <form className='main-form' key="form" action='.' method='GET' onSubmit={handleSubmit}>
         <div className='from-row'>
-            <label htmlFor="title">Exam name:</label>
+            <label htmlFor="form-exam-title">Exam name: </label>
                 <input
+                    className='form-title-input'
                     type="text"
                     value={title}
                     onChange={handleChangeTitle}
@@ -33,13 +35,14 @@ export default function Form(props) {
         <div className='from-row'>
             <label htmlFor='exam-date'>Exam date: </label>
             <input 
+                className='form-date'
                 type="date"
                 value={examDate}
                 onChange={handleChangeDate}
                 required/>
 
         </div>
-        <button type="submit">ok</button>
+        <button className='form-button' type="submit">Add group</button>
     </form>
   )
 }
