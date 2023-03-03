@@ -1,5 +1,6 @@
-import React,{useState} from 'react';
-import TopicGroup from "../TopicGroup/TopicGroup"
+import React from 'react';
+import TopicGroup from "../TopicGroup/TopicGroup";
+import "./GroupListItem.css"
 
 
 export default function GroupListItem(props ) {
@@ -53,18 +54,23 @@ export default function GroupListItem(props ) {
           changeTopicName={props.changeTopicName}/>
     ))
 
-  function calcAverKnowledge(){
+   function calcAverKnowledge(){
     const knowledge = props.topicList.map(item=> item.knowledge );
-    const knowledgeBlock=[];
-    knowledgeBlock.push(knowledge);
-    const addedKnowledgeBlock = Math.round((knowledgeBlock[0].reduce((a,b)=> a+b))/knowledgeBlock[0].length);
-    
-    return addedKnowledgeBlock
+
+    if(knowledge.length ===0){
+      return "-";
+    }else{
+      const knowledgeBlock=[];
+      knowledgeBlock.push(knowledge);
+      const addedKnowledgeBlock = Math.round((knowledgeBlock[0].reduce((a,b)=> a+b))/knowledgeBlock[0].length);
+      
+      return addedKnowledgeBlock};
   }
+   
 
    
   return (
-    <li key={props.item.groupId}>{props.item.groupSetting ?
+    <div className='GroupList-div' key={props.item.groupId}>{props.item.groupSetting ?
       <form key="form" action='#' method='GET'>
         <div className='from-row'>
             <label htmlFor="title">Exam name:</label>
@@ -99,10 +105,10 @@ export default function GroupListItem(props ) {
         {settingDayleft()}
         </div>
        <button onClick={handleAddTopic}>Add Item</button>
-       <ul>{topicGroupjsx}</ul>
+       <div>{topicGroupjsx}</div>
       </div> 
 
     }
-    </li>
+    </div>
   )
 }

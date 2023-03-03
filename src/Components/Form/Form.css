@@ -55,3 +55,7 @@
     box-shadow: 3px 2px 4px var(--pink);
     cursor: pointer;
 }
+
+.form-button:active{
+    scale: 0.97;
+}

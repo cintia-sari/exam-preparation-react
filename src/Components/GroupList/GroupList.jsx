@@ -20,6 +20,6 @@ export default function GroupList(props) {
     ))
 
   return (
-    <ul>{groupListItemjsx}</ul>
+    <div>{groupListItemjsx}</div>
   )
 }
