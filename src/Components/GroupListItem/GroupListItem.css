@@ -59,3 +59,15 @@
     box-shadow: 3px 2px 4px var(--pink);
     cursor: pointer;
 }
+
+.orange{
+    color:var(--orange)
+}
+
+.yellow{
+    color:var(--yellow)
+}
+
+.green{
+    color:var(--green)
+}

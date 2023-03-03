@@ -43,10 +43,6 @@ export default function TopicGroup(props) {
           <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
           <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
         </div>
-            <div>
-                <button onClick={handleChangeTopic}>Change</button>
-                <button onClick={handleDeleteTopic}>Delete</button>
-            </div>
             <div>{props.topic.name}</div>
             <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
                     "van"

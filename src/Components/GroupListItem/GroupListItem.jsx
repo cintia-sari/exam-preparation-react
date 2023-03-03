@@ -78,6 +78,22 @@ export default function GroupListItem(props ) {
       
       return addedKnowledgeBlock};
   }
+
+  //change color according to level:
+  function changeClassName(){ 
+    const levelNum=  calcAverKnowledge();
+    console.log( 0 < levelNum <= 40  )
+    if( 0 < levelNum && levelNum <= 40){
+      return "orange"
+    }else if( 40 < levelNum && levelNum <= 80){
+      return "yellow"
+    }else if( levelNum > 80){
+      return "green"
+    }
+    
+
+
+  }
    
 
    
@@ -85,7 +101,7 @@ export default function GroupListItem(props ) {
     <div className='GroupList-div' key={props.item.groupId}>{props.item.groupSetting ?
       <form key="form" action='#' method='GET'>
         <div className='from-row'>
-            <label htmlFor="title">Exam name: </label>
+            <label htmlFor="title" >Exam name: </label>
             <input
               className='form-title-input'
               type="text"
@@ -112,10 +128,10 @@ export default function GroupListItem(props ) {
           <a onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
         </div>
         <div className='group-title'>
-          <h3 title={props.item.title}>{props.item.title}</h3>
+          <h3 className={ changeClassName()} title={props.item.title}>{props.item.title}</h3>
         </div>
-        <div>{calcAverKnowledge()} %</div>
-        <div>
+        <div className={ changeClassName()} >{calcAverKnowledge()} %</div>
+        <div className={ changeClassName()}>
         {settingDayleft()}
         </div>
         <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
