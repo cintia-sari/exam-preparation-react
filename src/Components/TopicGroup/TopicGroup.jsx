@@ -4,7 +4,8 @@ import Settings from "../Icons/Settings.svg";
 
 export default function TopicGroup(props) {
 
-    function handleChangeTopic(){
+    function handleChangeTopic(e){
+        e.preventDefault();
         props.ChangeTopic(props.topic.topicId)
     }
 
@@ -13,11 +14,12 @@ export default function TopicGroup(props) {
         props.setValue(props.topic.topicId,valueInt)
     }
    
-    function handleChageHasTopic(){
+    function handleChangeHasTopic(){
         props.chageHasTopic(props.topic.topicId)
     }
 
-    function handleDeleteTopic(){
+    function handleDeleteTopic(e){
+        e.preventDefault();
         props.deleteTopic(props.topic.topicId)
     }
 
@@ -46,7 +48,7 @@ export default function TopicGroup(props) {
                 <button onClick={handleDeleteTopic}>Delete</button>
             </div>
             <div>{props.topic.name}</div>
-            <div onClick={handleChageHasTopic}>{props.topic.hasTopic ? 
+            <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
                     "van"
                     :
                     "nincs"}

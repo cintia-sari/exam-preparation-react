@@ -97,11 +97,11 @@ function changeExamDate(id,newDate ){
   });
 }
 
-function addTopic(id){
+function addTopic(id, name){
   const newTopic= structuredClone(state.group).map(group=>{
     if(group.groupId === id){
       group.topicList = [...group.topicList,{
-        name: "Topic",
+        name,
         knowledge: 0,
         topicSetting: false,
         hasTopic: false,

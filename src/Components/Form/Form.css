@@ -19,7 +19,7 @@
     border-radius: 20px;
     color:white;
     height: 1.1rem;
-    width: 55%;
+    width: 59%;
 }
 
 .form-title-input:hover{
@@ -33,7 +33,7 @@
     color:var(--white);
     background-color: var(--blue);
     height: 1.1rem;
-    width: 55%;
+    width: 60%;
 }
 
 .form-date:hover{

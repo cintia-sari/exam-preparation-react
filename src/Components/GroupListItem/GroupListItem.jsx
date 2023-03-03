@@ -7,6 +7,17 @@ import Settings from "../Icons/Settings.svg";
 
 export default function GroupListItem(props ) {
 
+  const [topicName,setTopicName]= React.useState("");
+
+    function handleTopicNameChange(e){
+      setTopicName(e.target.value)
+    };
+
+    function handleAddTopic(e){
+      e.preventDefault();
+      props.addTopic(props.item.groupId, topicName)
+      setTopicName("")
+    };
 
     function settingDayleft(){
       const day1 = new Date(props.item.examDate);
@@ -44,9 +55,6 @@ export default function GroupListItem(props ) {
       props.changeExamDate(props.item.groupId, e.target.value)
     }
   
-    function handleAddTopic(e){
-      props.addTopic(props.item.groupId)
-    }
   
     const topicGroupjsx = props.topicList.map(topic=>(
       <TopicGroup
@@ -77,8 +85,9 @@ export default function GroupListItem(props ) {
     <div className='GroupList-div' key={props.item.groupId}>{props.item.groupSetting ?
       <form key="form" action='#' method='GET'>
         <div className='from-row'>
-            <label htmlFor="title">Exam name:</label>
+            <label htmlFor="title">Exam name: </label>
             <input
+              className='form-title-input'
               type="text"
               value={props.item.title}
               onChange={handleChangeTitle}
@@ -87,13 +96,14 @@ export default function GroupListItem(props ) {
         <div className='from-row'>
             <label htmlFor='exam-date'>Exam date: </label>
             <input 
+              className='form-date'
               type="date"
               value={props.item.examDate}
               onChange={handleChangeDate}
               required/>
 
         </div>
-        <button type="submit" onClick={handleSetting}>OK</button>
+        <button className='form-button' type="submit" onClick={handleSetting}>OK</button>
       </form>
         :
       <div>
@@ -101,14 +111,18 @@ export default function GroupListItem(props ) {
           <a onClick={handleSetting} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
           <a onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
         </div>
-        <div>
-          {props.item.title}
+        <div className='group-title'>
+          <h3 title={props.item.title}>{props.item.title}</h3>
         </div>
         <div>{calcAverKnowledge()} %</div>
         <div>
         {settingDayleft()}
         </div>
-       <button onClick={handleAddTopic}>Add Item</button>
+        <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
+          <input type="text" value={topicName} onChange={handleTopicNameChange} required/>
+          <button type="submit">Add Item</button>
+        </form>
+       
        <div>{topicGroupjsx}</div>
       </div> 
 
