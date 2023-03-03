@@ -14,3 +14,17 @@
     height: 1rem;
 }
 
+.button-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-button:hover,
+.Settings-button:hover{
+    scale: 1.2;
+}
+
+.delete-button:active,
+.Settings-button:active{
+    scale: 1.2;
+}

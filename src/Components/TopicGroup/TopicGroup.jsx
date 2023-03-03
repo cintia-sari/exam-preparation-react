@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Delete from "../Icons/Delete.svg";
+import Settings from "../Icons/Settings.svg";
 
 export default function TopicGroup(props) {
 
@@ -35,6 +37,10 @@ export default function TopicGroup(props) {
         </div>
         :
         <li>
+             <div className='button-div'>
+          <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
+          <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
+        </div>
             <div>
                 <button onClick={handleChangeTopic}>Change</button>
                 <button onClick={handleDeleteTopic}>Delete</button>

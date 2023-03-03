@@ -2,7 +2,7 @@ import React from 'react';
 import TopicGroup from "../TopicGroup/TopicGroup";
 import "./GroupListItem.css";
 import Delete from "../Icons/Delete.svg";
-import Settings from "../Icons/Settings.svg"
+import Settings from "../Icons/Settings.svg";
 
 
 export default function GroupListItem(props ) {
@@ -31,7 +31,8 @@ export default function GroupListItem(props ) {
         props.deleteGroup(props.item.groupId)
     }
 
-    function handleSetting(){
+    function handleSetting(e){
+        e.preventDefault();
         props.settingGroup(props.item.groupId)
     }
 
@@ -96,9 +97,9 @@ export default function GroupListItem(props ) {
       </form>
         :
       <div>
-        <div>
-          <a  className='delete-button' onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
-          <a onClick={handleSetting}><img className='Settings-button' src={Settings} alt="Settings"></img></a>
+        <div className='button-div'>
+          <a onClick={handleSetting} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
+          <a onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
         </div>
         <div>
           {props.item.title}
