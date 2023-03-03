@@ -3,6 +3,7 @@ import Delete from "../Icons/Delete.svg";
 import Settings from "../Icons/Settings.svg";
 
 export default function TopicGroup(props) {
+    const [value,setValue]=React.useState("")
 
     function handleChangeTopic(e){
         e.preventDefault();
@@ -12,6 +13,7 @@ export default function TopicGroup(props) {
     function handleSetValue(e){
         const valueInt=parseInt(e.target.value)
         props.setValue(props.topic.topicId,valueInt)
+        setValue(valueInt)
     }
    
     function handleChangeHasTopic(){
@@ -27,6 +29,19 @@ export default function TopicGroup(props) {
         props.changeTopicName(props.topic.topicId, e.target.value)
     }
 
+   //change color according to level:
+   function changeClassName(){ 
+    
+    if( 0 < value && value <= 40){
+      return "orange"
+    }else if( 40 < value && value <= 80){
+      return "yellow"
+    }else if( value > 80){
+      return "green"
+    }
+  }
+console.log("ezt",changeClassName())
+
   return (
     <div> {props.topic.topicSetting ?
         <div>
@@ -38,19 +53,14 @@ export default function TopicGroup(props) {
             <button onClick={handleChangeTopic}> OK</button>
         </div>
         :
-        <li>
-             <div className='button-div'>
-          <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
-          <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
-        </div>
-            <div>{props.topic.name}</div>
-            <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
-                    "van"
-                    :
-                    "nincs"}
-            </div>  
+        <div>
+            <div className='button-div'>
+                <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
+                <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
+            </div>
+            <div className={changeClassName()}>{props.topic.name}</div>
             <div>
-                <label>
+                <label className={changeClassName()}>
                     <h4 className='level'>level: {props.topic.knowledge}%</h4>
                     <input
                         className='istyle' 
@@ -62,8 +72,13 @@ export default function TopicGroup(props) {
                         step="5" />
                 </label>
             </div>
+            <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
+                    "van"
+                    :
+                    "nincs"}
+            </div>  
 
-        </li>
+        </div>
     }</div>
   )
 }

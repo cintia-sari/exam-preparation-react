@@ -55,16 +55,6 @@ export default function GroupListItem(props ) {
       props.changeExamDate(props.item.groupId, e.target.value)
     }
   
-  
-    const topicGroupjsx = props.topicList.map(topic=>(
-      <TopicGroup
-          topic={topic}
-          ChangeTopic={props.ChangeTopic}
-          setValue={props.setValue}
-          chageHasTopic={props.chageHasTopic}
-          deleteTopic={props.deleteTopic}
-          changeTopicName={props.changeTopicName}/>
-    ))
 
    function calcAverKnowledge(){
     const knowledge = props.topicList.map(item=> item.knowledge );
@@ -82,7 +72,7 @@ export default function GroupListItem(props ) {
   //change color according to level:
   function changeClassName(){ 
     const levelNum=  calcAverKnowledge();
-    console.log( 0 < levelNum <= 40  )
+
     if( 0 < levelNum && levelNum <= 40){
       return "orange"
     }else if( 40 < levelNum && levelNum <= 80){
@@ -90,10 +80,17 @@ export default function GroupListItem(props ) {
     }else if( levelNum > 80){
       return "green"
     }
-    
-
-
   }
+
+  const topicGroupjsx = props.topicList.map(topic=>(
+    <TopicGroup
+        topic={topic}
+        ChangeTopic={props.ChangeTopic}
+        setValue={props.setValue}
+        chageHasTopic={props.chageHasTopic}
+        deleteTopic={props.deleteTopic}
+        changeTopicName={props.changeTopicName}/>
+  ))
    
 
    

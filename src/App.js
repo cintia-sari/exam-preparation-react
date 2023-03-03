@@ -25,7 +25,7 @@ function App() {
       nextTopicId:1,
     }
   );
-console.log(state.group)
+
   function addGroup(title,examDate){
     const newGroup = structuredClone(state.group)
     newGroup.push({
