@@ -9,7 +9,8 @@
     margin-top: 40px;
 }
 
-.delete-button{
+.delete-button,
+.Settings-button{
     height: 1rem;
 }
 
