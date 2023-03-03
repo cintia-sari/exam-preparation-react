@@ -1,6 +1,7 @@
 import React from 'react';
 import TopicGroup from "../TopicGroup/TopicGroup";
-import "./GroupListItem.css"
+import "./GroupListItem.css";
+import Delete from "../Icons/Delete.svg";
 
 
 export default function GroupListItem(props ) {
@@ -24,7 +25,8 @@ export default function GroupListItem(props ) {
     }
   
 
-    function handleDelet(){
+    function handleDelet(e){
+      e.preventDefault();
         props.deleteGroup(props.item.groupId)
     }
 
@@ -94,7 +96,7 @@ export default function GroupListItem(props ) {
         :
       <div>
         <div>
-          <button onClick={handleDelet}>Delete</button>
+          <a  className='delete-button' onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
           <button onClick={handleSetting}>Setting</button>
         </div>
         <div>
