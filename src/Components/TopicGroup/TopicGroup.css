@@ -13,6 +13,9 @@
 
 .topic-title{
     margin: 5px;
+    display: block;
+    overflow: hidden;
+    text-overflow:ellipsis ;
 }
 
 .topic-level{

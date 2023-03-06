@@ -61,7 +61,7 @@ console.log("ezt",changeClassName())
                 <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
                 <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
             </div>
-            <div className={changeClassName()}><h3 className='topic-title'>{props.topic.name}</h3></div>
+            <div className={changeClassName()}><h3 className='topic-title' title={props.topic.name}>{props.topic.name}</h3></div>
             <div>
                 <label className={changeClassName()}>
                     <h4 className='topic-level'>level: {props.topic.knowledge}%</h4>
