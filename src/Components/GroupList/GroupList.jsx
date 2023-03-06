@@ -20,7 +20,8 @@ export default function GroupList(props) {
                        changeTopicName={props.changeTopicName}/>
     ))
 
+
   return (
-    <div className='groupList-contanier'>{groupListItemjsx}</div>
+    <div key={props.group.groupId} className='groupList-contanier'>{groupListItemjsx}</div>
   )
 }

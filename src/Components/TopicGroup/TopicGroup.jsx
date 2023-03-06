@@ -42,10 +42,9 @@ export default function TopicGroup(props) {
       return "green"
     }
   }
-console.log("ezt",changeClassName())
 
   return (
-    <div className='topicList-div'> {props.topic.topicSetting ?
+    <div key={props.topic.topicId} className='topicList-div'> {props.topic.topicSetting ?
         <form onSubmit={handleChangeTopic}>
             <label> Topic name: </label>
             <input 
@@ -76,10 +75,16 @@ console.log("ezt",changeClassName())
                         step="5" />
                 </label>
             </div>
-            <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
+            <div className='item-check' onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
+                    <div className='item-check-div' >
                     <img className='Check' src={Check} alt="haveTopic"></img>
+                    <span className='green'> has item</span>
+                    </div>
                     :
+                    <div className='item-check-div' title="If you have an item, click here!">
                     <img className='Xmark' src={Xmark} alt="haveNotTopic"></img>
+                    <span className='orange'> has item</span>
+                    </div>
                     }
             </div>  
 

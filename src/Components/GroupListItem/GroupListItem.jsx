@@ -133,7 +133,7 @@ export default function GroupListItem(props ) {
         </div>
         <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
           <input type="text" value={topicName} onChange={handleTopicNameChange} required/>
-          <button type="submit">Add Item</button>
+          <button type="submit">Add topic</button>
         </form>
        
        <div>{topicGroupjsx}</div>

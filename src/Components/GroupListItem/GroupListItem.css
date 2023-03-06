@@ -25,7 +25,7 @@
 
 .delete-button:active,
 .Settings-button:active{
-    scale: 1.2;
+    scale: 0.8;
 }
 
 .group-title h3{
@@ -44,6 +44,7 @@
     width: 70%;
     margin-top: 1rem;
     outline: none;
+    margin-bottom: 7px;
 }
 
 .topic-form button{
@@ -72,3 +73,23 @@
 .green{
     color:var(--green)
 }
+
+.item-check{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 2rem;
+}
+
+.item-check img{
+    margin:0 0.5rem;
+}
+
+.item-check-div{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    cursor: pointer;
+}
+
+
