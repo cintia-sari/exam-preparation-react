@@ -2,6 +2,8 @@ import React from 'react';
 import Delete from "../Icons/Delete.svg";
 import Settings from "../Icons/Settings.svg";
 import "./TopicGroup.css";
+import Check from "../Icons/Check.svg";
+import Xmark from "../Icons/Xmark.svg";
 
 export default function TopicGroup(props) {
     const [value,setValue]=React.useState("")
@@ -74,9 +76,10 @@ console.log("ezt",changeClassName())
                 </label>
             </div>
             <div onClick={handleChangeHasTopic}>{props.topic.hasTopic ? 
-                    "van"
+                    <img className='Check' src={Check} alt="haveTopic"></img>
                     :
-                    "nincs"}
+                    <img className='Xmark' src={Xmark} alt="haveNotTopic"></img>
+                    }
             </div>  
 
         </div>

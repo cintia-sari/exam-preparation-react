@@ -51,3 +51,13 @@ input[type=range] {
     justify-content: center;
     margin:10px;
   }
+
+  img{
+    height: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  img:hover{
+    scale: 1.2;
+  }
