@@ -1,6 +1,7 @@
 import React from 'react';
 import Delete from "../Icons/Delete.svg";
 import Settings from "../Icons/Settings.svg";
+import "./TopicGroup.css";
 
 export default function TopicGroup(props) {
     const [value,setValue]=React.useState("")
@@ -43,7 +44,7 @@ export default function TopicGroup(props) {
 console.log("ezt",changeClassName())
 
   return (
-    <div> {props.topic.topicSetting ?
+    <div className='topicList-div'> {props.topic.topicSetting ?
         <div>
             <label> Topic name: </label>
             <input 
@@ -58,10 +59,10 @@ console.log("ezt",changeClassName())
                 <a onClick={handleChangeTopic} href="#"><img className='Settings-button' src={Settings} alt="Settings"></img></a>
                 <a onClick={handleDeleteTopic} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
             </div>
-            <div className={changeClassName()}>{props.topic.name}</div>
+            <div className={changeClassName()}><h3 className='topic-title'>{props.topic.name}</h3></div>
             <div>
                 <label className={changeClassName()}>
-                    <h4 className='level'>level: {props.topic.knowledge}%</h4>
+                    <h4 className='topic-level'>level: {props.topic.knowledge}%</h4>
                     <input
                         className='istyle' 
                         value={props.topic.knowledge}
