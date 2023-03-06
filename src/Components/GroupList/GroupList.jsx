@@ -1,5 +1,6 @@
 import React from 'react';
 import GroupListItem from "../GroupListItem/GroupListItem";
+import "./GroupList.css"
 
 
 export default function GroupList(props) {
@@ -20,6 +21,6 @@ export default function GroupList(props) {
     ))
 
   return (
-    <div>{groupListItemjsx}</div>
+    <div className='groupList-contanier'>{groupListItemjsx}</div>
   )
 }

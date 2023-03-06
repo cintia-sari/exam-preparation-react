@@ -9,7 +9,6 @@ export default function TopicGroup(props) {
     const [value,setValue]=React.useState("")
 
     function handleChangeTopic(e){
-        e.preventDefault();
         props.ChangeTopic(props.topic.topicId)
     }
 
