@@ -11,7 +11,7 @@ https://fontawesome.com/
 
 I wanted to create a web application that could be useful to people and besides that I could practice the basics of React well. Since I also like to write lists and track my progress, I wanted to make a learning aid application, the target group of which was mainly high school and university students.
 
-## functions:
+## Functions:
 
 * They can give you the name and date of the exam.
 
@@ -21,6 +21,6 @@ I wanted to create a web application that could be useful to people and besides 
 
 * On the items, they can state whether they already have the item.
 
-* Percentage and color-coded rencer in one:
+* Percentage slider and color-coded  in one:
   
    * Inside the items there is a slider on which they can set the percentage of their current level of knowledge, and this is color-coded so that they know at a glance which item needs to be reviewed more. On top of that, they can see their level of knowledge projected onto the entire exam.
