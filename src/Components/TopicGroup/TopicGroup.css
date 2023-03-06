@@ -19,3 +19,35 @@
     margin:5px;
     font-weight: 400;
 }
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 70%;
+  }
+ 
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    cursor: pointer;
+    background: var(--white);
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 8px;
+    border-radius: 9px;
+    background:var(--pink);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover{
+    scale:1.2;
+  }
+
+  .check-list{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+  }
