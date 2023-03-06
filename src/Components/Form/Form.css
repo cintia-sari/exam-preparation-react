@@ -36,6 +36,7 @@
     background-color: var(--blue);
     height: 1.1rem;
     width: 60%;
+    outline: none;
 }
 
 .form-date:hover{

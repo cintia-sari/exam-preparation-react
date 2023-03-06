@@ -22,7 +22,7 @@ export default function GroupListItem(props ) {
     function settingDayleft(){
       const day1 = new Date(props.item.examDate);
       const day2 = new Date();
-      const dayleft = Math.round((day1-day2)/1000/60/60/24);
+      const dayleft = (Math.round((day1-day2)/1000/60/60/24))+1;
       const szöveg=String(dayleft);
 
      if(dayleft > 1){
