@@ -20,6 +20,8 @@
     color:white;
     height: 1.1rem;
     width: 59%;
+    white-space:10px;
+    outline: none;
 }
 
 .form-title-input:hover{
@@ -59,3 +61,4 @@
 .form-button:active{
     scale: 0.97;
 }
+

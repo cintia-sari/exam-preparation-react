@@ -44,6 +44,7 @@
     color:var(--white);
     width: 70%;
     margin-top: 1rem;
+    outline: none;
 }
 
 .topic-form button{

@@ -50,10 +50,11 @@ console.log("ezt",changeClassName())
         <div>
             <label> Topic name: </label>
             <input 
+                className='form-title-input'
                 type="text"
                 value={props.topic.name}
                 onChange={handleChangeTopicName}/>
-            <button onClick={handleChangeTopic}> OK</button>
+            <button className='form-button' onClick={handleChangeTopic}> OK</button>
         </div>
         :
         <div>
