@@ -52,7 +52,7 @@ export default function GroupListItem(props ) {
     }
 
     function handleChangeDate(e){
-      props.changeExamDate(props.item.groupId, e.target.value)
+      props.changeExamDate(props.item.groupId, e.target.value);
     }
   
 

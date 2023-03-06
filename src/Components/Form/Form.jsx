@@ -17,6 +17,7 @@ export default function Form(props) {
         e.preventDefault();
         props.addGroup(title, examDate);
         setTitle("");
+        setexamDate("");
     }
 
     
