@@ -47,15 +47,16 @@ console.log("ezt",changeClassName())
 
   return (
     <div className='topicList-div'> {props.topic.topicSetting ?
-        <div>
+        <form onSubmit={handleChangeTopic}>
             <label> Topic name: </label>
             <input 
                 className='form-title-input'
                 type="text"
                 value={props.topic.name}
-                onChange={handleChangeTopicName}/>
-            <button className='form-button' onClick={handleChangeTopic}> OK</button>
-        </div>
+                onChange={handleChangeTopicName}
+                required/>
+            <button className='form-button'> OK</button>
+        </form>
         :
         <div>
             <div className='button-div'>

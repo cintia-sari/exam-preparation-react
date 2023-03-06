@@ -96,7 +96,7 @@ export default function GroupListItem(props ) {
    
   return (
     <div className='GroupList-div' key={props.item.groupId}>{props.item.groupSetting ?
-      <form key="form" action='#' method='GET'>
+      <form key="form" action='#' method='GET' onSubmit={handleSetting}>
         <div className='from-row'>
             <label htmlFor="title" >Exam name: </label>
             <input
@@ -116,7 +116,7 @@ export default function GroupListItem(props ) {
               required/>
 
         </div>
-        <button className='form-button' type="submit" onClick={handleSetting}>OK</button>
+        <button className='form-button' type="submit">OK</button>
       </form>
         :
       <div>
