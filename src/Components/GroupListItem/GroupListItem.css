@@ -31,7 +31,7 @@
 .group-title h3{
     font-size: 1.2rem;
     overflow: hidden;
-    text-overflow:ellipsis ;
+    text-overflow:ellipsis;
     margin:5px;
     max-height: 3.5rem;
 }
@@ -60,6 +60,10 @@
 .topic-form input:hover{
     box-shadow: 3px 2px 4px var(--pink);
     cursor: pointer;
+}
+
+.topic-form input::placeholder{
+    color:var(--white)
 }
 
 .orange{

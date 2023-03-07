@@ -3,10 +3,12 @@ import TopicGroup from "../TopicGroup/TopicGroup";
 import "./GroupListItem.css";
 import Delete from "../Icons/Delete.svg";
 import Settings from "../Icons/Settings.svg";
+import Popup from '../PopUp/PopUp';
 
 
 export default function GroupListItem(props ) {
 
+  const [isOpen, setIsOpen] = React.useState(false);
   const [topicName,setTopicName]= React.useState("");
 
     function handleTopicNameChange(e){
@@ -70,7 +72,7 @@ export default function GroupListItem(props ) {
   }
 
   //change color according to level:
-  function changeClassName(){ 
+  function changeLevelColor(){ 
     const levelNum=  calcAverKnowledge();
 
     if( 0 < levelNum && levelNum <= 40){
@@ -96,8 +98,26 @@ export default function GroupListItem(props ) {
 function selectRandomTopic(){
  const max= props.topicList.length;
  const randomNum= Math.floor(Math.random()* max );
- const randomTitle = props.item.topicList[randomNum] ;
-console.log(randomTitle.name)
+ const randomTopicList = props.item.topicList[randomNum] ;
+ return randomTopicList.name;
+}
+
+const togglePopup = () => {
+  setIsOpen(!isOpen);
+}
+console.log(isOpen)
+
+function toClaspVisibilityPopUp (){
+  return(
+    <div>
+    {isOpen && <Popup
+        content={
+              <h3 title={selectRandomTopic()}>{selectRandomTopic()}</h3>
+        }
+        handleClose={togglePopup}
+    />}
+</div>
+  )
 }
    
   return (
@@ -131,19 +151,21 @@ console.log(randomTitle.name)
           <a onClick={handleDelet} href="#"><img className='delete-button' src={Delete} alt="delete"></img></a>
         </div>
         <div className='group-title'>
-          <h3 className={ changeClassName()} title={props.item.title}>{props.item.title}</h3>
+          <h3 className={ changeLevelColor()} title={props.item.title}>{props.item.title}</h3>
         </div>
-        <div className={ changeClassName()} >{calcAverKnowledge()} %</div>
-        <div className={ changeClassName()}>
+        <div className={ changeLevelColor()} >{calcAverKnowledge()} %</div>
+        <div className={ changeLevelColor()}>
         {settingDayleft()}
         </div>
-        <button onClick={selectRandomTopic}>sorsolás</button>
+        <button className='form-button' onClick={togglePopup}>Topic draw</button>
         <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
-          <input type="text" value={topicName} onChange={handleTopicNameChange} required/>
+          <input placeholder='Type new topic name...' type="text" value={topicName} onChange={handleTopicNameChange} required/>
           <button type="submit">Add topic</button>
         </form>
        
        <div>{topicGroupjsx}</div>
+
+       {toClaspVisibilityPopUp ()}
       </div> 
       
 
