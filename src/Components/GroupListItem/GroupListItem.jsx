@@ -82,6 +82,7 @@ export default function GroupListItem(props ) {
     }
   }
 
+
   const topicGroupjsx = props.topicList.map(topic=>(
     <TopicGroup
         topic={topic}
@@ -92,7 +93,12 @@ export default function GroupListItem(props ) {
         changeTopicName={props.changeTopicName}/>
   ))
    
-
+function selectRandomTopic(){
+ const max= props.topicList.length;
+ const randomNum= Math.floor(Math.random()* max );
+ const randomTitle = props.item.topicList[randomNum] ;
+console.log(randomTitle.name)
+}
    
   return (
     <div className='GroupList-div' key={props.item.groupId}>{props.item.groupSetting ?
@@ -131,6 +137,7 @@ export default function GroupListItem(props ) {
         <div className={ changeClassName()}>
         {settingDayleft()}
         </div>
+        <button onClick={selectRandomTopic}>sorsolás</button>
         <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
           <input type="text" value={topicName} onChange={handleTopicNameChange} required/>
           <button type="submit">Add topic</button>
@@ -138,6 +145,7 @@ export default function GroupListItem(props ) {
        
        <div>{topicGroupjsx}</div>
       </div> 
+      
 
     }
     </div>
