@@ -97,9 +97,13 @@ export default function GroupListItem(props ) {
    
 function selectRandomTopic(){
  const max= props.topicList.length;
+
+ if (max == 0){
+  return "Please add some topic..."
+ }else{
  const randomNum= Math.floor(Math.random()* max );
  const randomTopicList = props.item.topicList[randomNum] ;
- return randomTopicList.name;
+ return randomTopicList.name;}
 }
 
 const togglePopup = () => {
