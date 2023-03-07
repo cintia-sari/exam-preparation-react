@@ -25,4 +25,5 @@ I wanted to create a web application that could be useful to people and besides 
   
    * Inside the items there is a slider on which they can set the percentage of their current level of knowledge, and this is color-coded so that they know at a glance which item needs to be reviewed more. On top of that, they can see their level of knowledge projected onto the entire exam.
 
-* Within the groups, you can randomly draw one of the items
+* Within the groups, you can randomly draw one of the items (
+documentation that helped me write this part: https://www.cluemediator.com/create-simple-popup-in-reactjs )
