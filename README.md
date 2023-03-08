@@ -8,7 +8,7 @@ https://cintia-sari.github.io/exam-preparation-react/#
 
 I have created a web application that is useful to people. Besides, I could practice the basics of React as well. I created a learning aid application, because I like writing lists and tracking my progress. The target group of this application is high school and university students.
 
-## Functions:
+## funkcionalitás:
 
 * They can give you the name and date of the exam.
 
