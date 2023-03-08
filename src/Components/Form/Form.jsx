@@ -21,6 +21,10 @@ export default function Form(props) {
         setexamDate("");
     };
 
+    function getMinDate(){
+        const minDate= new Date().toLocaleDateString('fr-CA');
+        return minDate
+    };
     
 
   return (
@@ -39,6 +43,7 @@ export default function Form(props) {
             <input 
                 className='form-date'
                 type="date"
+                min={getMinDate()}
                 value={examDate}
                 onChange={handleChangeDate}
                 required/>
