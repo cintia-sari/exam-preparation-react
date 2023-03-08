@@ -9,7 +9,7 @@ https://fontawesome.com/
 
 ## Why I wrote this app:
 
-I wanted to create a web application that could be useful to people and besides that I could practice the basics of React well. Since I also like to write lists and track my progress, I wanted to make a learning aid application, the target group of which was mainly high school and university students.
+I have created a web application that is useful to people. Besides, I could practice the basics of React as well. I created a learning aid application, because I like writing lists and tracking my progress. The target group of this application is high school and university students.
 
 ## Functions:
 
