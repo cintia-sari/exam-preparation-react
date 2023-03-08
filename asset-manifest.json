@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/exam-preparation-react/static/css/main.1871daad.css",
-    "main.js": "/exam-preparation-react/static/js/main.09cd1163.js",
+    "main.css": "/exam-preparation-react/static/css/main.78a1b739.css",
+    "main.js": "/exam-preparation-react/static/js/main.2ef2487d.js",
     "static/js/787.2e8e16b4.chunk.js": "/exam-preparation-react/static/js/787.2e8e16b4.chunk.js",
     "static/media/Settings.svg": "/exam-preparation-react/static/media/Settings.9ff9177fcdc629503deca797f1bf0030.svg",
     "index.html": "/exam-preparation-react/index.html",
     "static/media/Delete.svg": "/exam-preparation-react/static/media/Delete.8978874d0fb60ba7df3d4eb483fb202a.svg",
     "static/media/Xmark.svg": "/exam-preparation-react/static/media/Xmark.6a2e30e3389e7a4ab4f3157f8cd7c821.svg",
     "static/media/Check.svg": "/exam-preparation-react/static/media/Check.6e3e510aeea1beeaf1d1bdfd910e2c69.svg",
-    "main.1871daad.css.map": "/exam-preparation-react/static/css/main.1871daad.css.map",
-    "main.09cd1163.js.map": "/exam-preparation-react/static/js/main.09cd1163.js.map",
+    "main.78a1b739.css.map": "/exam-preparation-react/static/css/main.78a1b739.css.map",
+    "main.2ef2487d.js.map": "/exam-preparation-react/static/js/main.2ef2487d.js.map",
     "787.2e8e16b4.chunk.js.map": "/exam-preparation-react/static/js/787.2e8e16b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1871daad.css",
-    "static/js/main.09cd1163.js"
+    "static/css/main.78a1b739.css",
+    "static/js/main.2ef2487d.js"
   ]
 }
