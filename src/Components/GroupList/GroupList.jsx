@@ -18,10 +18,9 @@ export default function GroupList(props) {
                        chageHasTopic={props.chageHasTopic}
                        deleteTopic={props.deleteTopic}
                        changeTopicName={props.changeTopicName}/>
-    ))
-
+    ));
 
   return (
     <div key={props.group.groupId} className='groupList-contanier'>{groupListItemjsx}</div>
   )
-}
+};

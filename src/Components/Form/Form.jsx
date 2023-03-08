@@ -7,7 +7,7 @@ export default function Form(props) {
     const [examDate, setexamDate]= useState ("");
 
     function handleChangeTitle(e){
-        setTitle(e.target.value)
+         setTitle(e.target.value)
     };
 
     function handleChangeDate(e){
@@ -23,7 +23,7 @@ export default function Form(props) {
 
     function getMinDate(){
         const minDate= new Date().toLocaleDateString('fr-CA');
-        return minDate
+        return minDate;
     };
     
 
@@ -31,12 +31,12 @@ export default function Form(props) {
     <form className='main-form' key="form" action='.' method='GET' onSubmit={handleSubmit}>
         <div className='from-row'>
             <label htmlFor="form-exam-title">Exam name: </label>
-                <input
-                    className='form-title-input'
-                    type="text"
-                    value={title}
-                    onChange={handleChangeTitle}
-                    required/>
+            <input
+                className='form-title-input'
+                type="text"
+                value={title}
+                onChange={handleChangeTitle}
+                required/>
         </div>
         <div className='from-row'>
             <label htmlFor='exam-date'>Exam date: </label>
@@ -52,4 +52,4 @@ export default function Form(props) {
         <button className='form-button' type="submit">Add group</button>
     </form>
   )
-}
+};

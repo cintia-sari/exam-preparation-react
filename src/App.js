@@ -56,22 +56,22 @@ function deleteGroup(id){
   function settingGroup(id){
       const setGroupSetting = structuredClone(state.group).map(group=>{
         if( group.groupId === id){
-          group.groupSetting= !group.groupSetting;
-        }
+          group.groupSetting = !group.groupSetting;
+        };
         return group;
-      })
+      });
       setState({
         group:setGroupSetting,
         nextGroupId:state.nextGroupId,
         nextTopicId:state.nextTopicId
       });
-  }
+  };
 
 function changeTitle ( id, newTitlename){
   const newTitle = structuredClone(state.group).map(group=>{
     if (group.groupId === id){
       group.title = newTitlename
-    }
+    };
     return group;
   });
 
@@ -80,22 +80,22 @@ function changeTitle ( id, newTitlename){
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function changeExamDate(id,newDate ){
   const newExamDate = structuredClone(state.group).map(group=>{
     if(group.groupId === id ){
       group.examDate = newDate
-    }
+    };
     return group;
-  })
+  });
 
   setState({
     group:newExamDate,
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function addTopic(id, name){
   const newTopic= structuredClone(state.group).map(group=>{
@@ -107,32 +107,32 @@ function addTopic(id, name){
         hasTopic: false,
         topicId: state.nextTopicId,
       }]
-    }
-    return group
-    })
+    };
+    return group;
+    });
 
     setState({
       group: newTopic,
       nextGroupId: state.nextGroupId,
       nextTopicId: state.nextTopicId +1
     });
-  }
+  };
 
 function ChangeTopic(id){
 
   const knowledgeSet = structuredClone(state.group).map(group=>{
-    return{
+    return {
         title: group.title,
         examDate: group.examDate,
         groupSetting: group.groupSetting,
         groupId: group.groupId, 
-        topicList:group.topicList.map(topic=>{
+        topicList: group.topicList.map(topic=>{
           if(topic.topicId === id){
             topic.topicSetting = !topic.topicSetting
           }
           return topic;
         })
-    }
+    };
   });
 
   setState({
@@ -140,22 +140,22 @@ function ChangeTopic(id){
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function setValue(id, newValue){
   const topicSet = structuredClone(state.group).map(group=>{
-    return{
+    return {
         title: group.title,
         examDate: group.examDate,
         groupSetting: group.groupSetting,
         groupId: group.groupId, 
-        topicList:group.topicList.map(topic=>{
+        topicList: group.topicList.map(topic=>{
           if(topic.topicId === id){
             topic.knowledge = newValue
-          }
+          };
           return topic;
         })
-    }
+    };
   });
 
   setState({
@@ -163,7 +163,7 @@ function setValue(id, newValue){
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function chageHasTopic(id){
   const changedHasTopic = structuredClone(state.group).map(group=>{
@@ -172,39 +172,39 @@ function chageHasTopic(id){
       examDate: group.examDate,
       groupSetting: group.groupSetting,
       groupId: group.groupId, 
-      topicList:group.topicList.map(item=>{
+      topicList: group.topicList.map(item=>{
         if(item.topicId === id ){
           item.hasTopic = !item.hasTopic
         }
         return item;
       })
 
-    }
+    };
   })
   setState({
     group:changedHasTopic,
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function deleteTopic(id){
   const newTopicGroup = structuredClone(state.group).map(group=>{
-    return{
+    return {
       title: group.title,
       examDate: group.examDate,
       groupSetting: group.groupSetting,
       groupId: group.groupId, 
       topicList:group.topicList.filter(item=> item.topicId !== id)
     }
-  })
+  });
 
   setState({
     group:newTopicGroup,
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
 function changeTopicName(id,newName){
   const newTopicName= structuredClone(state.group).map(group=>{
@@ -213,19 +213,20 @@ function changeTopicName(id,newName){
       examDate: group.examDate,
       groupSetting: group.groupSetting,
       groupId: group.groupId, 
-      topicList:group.topicList.map(item=>{
+      topicList: group.topicList.map(item=>{
         if(item.topicId === id){
             item.name = newName
         }
         return item;
       })
-    }})
+    };
+  });
   setState({
     group:newTopicName,
     nextGroupId:state.nextGroupId,
     nextTopicId:state.nextTopicId
   });
-}
+};
 
   return (
     <>
@@ -244,6 +245,6 @@ function changeTopicName(id,newName){
                 changeTopicName={changeTopicName}/>
     </>
   );
-}
+};
 
 export default App;

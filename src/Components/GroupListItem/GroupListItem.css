@@ -5,7 +5,7 @@
     padding:15px;
     font-size: 1rem;
     width: 15rem;
-    margin: 40px 20px 20px ;
+    margin: 40px 20px 20px;
 }
 
 .delete-button,
@@ -57,19 +57,7 @@
 }
 
 .topic-form input::placeholder{
-    color:var(--white)
-}
-
-.orange{
-    color:var(--orange)
-}
-
-.yellow{
-    color:var(--yellow)
-}
-
-.green{
-    color:var(--green)
+    color:var(--white);
 }
 
 .item-check{
@@ -88,6 +76,19 @@
     justify-content: center;
     align-items:center;
     cursor: pointer;
+}
+
+/* Colors change according to percentage */
+.orange{
+    color:var(--orange);
+}
+
+.yellow{
+    color:var(--yellow);
+}
+
+.green{
+    color:var(--green);
 }
 
 
