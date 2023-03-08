@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import "./Form.css"
+import "./Form.css";
 
 export default function Form(props) {
+
     const [title,setTitle]= useState("");
     const [examDate, setexamDate]= useState ("");
 
@@ -11,14 +12,14 @@ export default function Form(props) {
 
     function handleChangeDate(e){
         setexamDate(e.target.value)
-    }
+    };
 
     function handleSubmit(e){
         e.preventDefault();
         props.addGroup(title, examDate);
         setTitle("");
         setexamDate("");
-    }
+    };
 
     
 

@@ -163,7 +163,7 @@ function toClaspVisibilityPopUp (){
         </div>
         <button className='form-button' onClick={togglePopup}>Topic draw</button>
         <form className='topic-form' key="form" action='.' method='GET' onSubmit={handleAddTopic}>
-          <input placeholder='Type new topic name...' type="text" value={topicName} onChange={handleTopicNameChange} required/>
+          <input className='form-title-input' placeholder='Type new topic name...' type="text" value={topicName} onChange={handleTopicNameChange} required/>
           <button type="submit">Add topic</button>
         </form>
        

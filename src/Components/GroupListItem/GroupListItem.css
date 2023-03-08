@@ -37,13 +37,7 @@
 }
 
 .topic-form input{
-    border-radius: 20px;
-    border: 1px solid var(--pink);
-    background-color: var(--blue);
-    color:var(--white);
-    width: 70%;
     margin-top: 1rem;
-    outline: none;
     margin-bottom: 7px;
 }
 

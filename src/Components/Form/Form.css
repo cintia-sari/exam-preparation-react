@@ -1,4 +1,6 @@
 
+
+
 .main-form{
     background-color: var(--blue);
     box-shadow:4px 4px 20px var(--boxshadow);
@@ -6,7 +8,7 @@
     padding:20px;
     display: inline-block;
     font-size: 1rem;
-    max-width: 19rem;
+    width: 18rem;
 }
 
 .from-row{
@@ -22,6 +24,7 @@
     width: 59%;
     white-space:10px;
     outline: none;
+    padding:5px 10px;
 }
 
 .form-title-input:hover{
@@ -37,6 +40,12 @@
     height: 1.1rem;
     width: 60%;
     outline: none;
+    padding:5px 10px;
+}
+
+.form-date::-webkit-calendar-picker-indicator {
+    filter: invert(43%) sepia(30%) saturate(3791%) hue-rotate(307deg) brightness(100%) contrast(103%);
+    cursor: pointer;
 }
 
 .form-date:hover{
